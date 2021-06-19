@@ -3,7 +3,7 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
-  "assets/AssetManifest.json": "e40b39a64a861d355decbc825937340a",
+  "assets/AssetManifest.json": "b3b92d356a4ca759a9b3b003ceb35ade",
 "assets/assets/fonts/roboto_bold.ttf": "d329cc8b34667f114a95422aaad1b063",
 "assets/assets/fonts/roboto_medium.ttf": "894a2ede85a483bf9bedefd4db45cdb9",
 "assets/assets/fonts/roboto_regular.ttf": "230e0e1a8b7a17d5f3f03de75adea5a2",
@@ -102,6 +102,7 @@ const RESOURCES = {
 "assets/assets/images/forward_arrow.png": "fb7de03789900ecceea10724b4c08766",
 "assets/assets/images/from_to.png": "fa099ec3435269da6b8fd185b1228f96",
 "assets/assets/images/gallery_upload.png": "8b0ae0edb2354f2d71a27c8e0d5fb755",
+"assets/assets/images/google-maps.png": "c4c95d52fa5b289d510add1d1132f08d",
 "assets/assets/images/gov_id_aadhaar.png": "a158f6329ae7d152f8993f98699e55a8",
 "assets/assets/images/gov_id_dl.png": "1f96f00576aefc4147b55c429c6bcf3e",
 "assets/assets/images/gov_id_nrega.png": "5f2bfce5ec3b06f679c30dab0d068347",
@@ -122,6 +123,8 @@ const RESOURCES = {
 "assets/assets/images/hotel_img.png": "e48231dd7f8ed1be5f22899dba09b03a",
 "assets/assets/images/hotel_img_1.png": "181cd7f9adf20f0233cebae5c2777b7f",
 "assets/assets/images/hotel_img_2.png": "bc8e7cc254c78eb2d0ebd744c28a2888",
+"assets/assets/images/hotel_img_3.png": "c569a39a3fd55b1222ec444885e9652d",
+"assets/assets/images/hotel_passanger.png": "7a1c4d46932b7f199f5f678b1998193b",
 "assets/assets/images/icon_cross_bl.png": "5e22b3be5affaead15c2e182b4fef165",
 "assets/assets/images/icon_date_flight.png": "7645e82637243e41e8e7a6431a1176c4",
 "assets/assets/images/icon_dropdown.png": "87ef46630163984d4b86767cd138e2f2",
@@ -133,6 +136,7 @@ const RESOURCES = {
 "assets/assets/images/icon_train.png": "6a5cb95f46e5621bae4e6e270d47dbf3",
 "assets/assets/images/ic_history.png": "3e03eea8bcff24361c92e5cffbd44ce6",
 "assets/assets/images/ic_nationality.png": "f6fdb0f65ecac691cd1b33013e34ca54",
+"assets/assets/images/info.png": "d4e4e5b01fc4d88b380e8d848949721b",
 "assets/assets/images/instagram_ic.png": "84cfc74ea089f8e7c0a917bf12a39e9e",
 "assets/assets/images/intro_art1.png": "f8f16d49068f59706617fde34c857027",
 "assets/assets/images/intro_art2.png": "f994f90a43ecf46e1ed994e82e763e8d",
@@ -182,6 +186,7 @@ const RESOURCES = {
 "assets/assets/images/register_web_banner.png": "f94385c611467b9cf275cc4f2ff2a52d",
 "assets/assets/images/rejected_ic.png": "6319044208ac202fb97aadfc043b19bb",
 "assets/assets/images/room_ic.png": "237f1c9a0c4f6f7f7da209b8a44018e3",
+"assets/assets/images/room_img.png": "867275e9d5dcd05d509975ca1e7ce65d",
 "assets/assets/images/round_trips.png": "5dbc6b5a1ebb7dabea308b8b6e1fb6dc",
 "assets/assets/images/rupees_ic.png": "061479d79cc62a42f9aa9c9e80f36d90",
 "assets/assets/images/rupee_icon.png": "f335705a628df91f1a0c46041bcfb22f",
@@ -219,7 +224,7 @@ const RESOURCES = {
 "assets/assets/images/youtube_ic.png": "701924d2ac5259ffb0fb4a31d25adc24",
 "assets/FontManifest.json": "409df3525166b0e80778d23ebae8cdc1",
 "assets/fonts/MaterialIcons-Regular.otf": "4e6447691c9509f7acdbf8a931a85ca1",
-"assets/NOTICES": "d54bf1e5ea9a28946a2c294ae78d7945",
+"assets/NOTICES": "a8955664af4ef70df28008567f26a331",
 "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "6d342eb68f170c97609e9da345464e5e",
 "assets/packages/flutter_inappwebview/t_rex_runner/t-rex.css": "5a8d0222407e388155d7d1395a75d5b9",
 "assets/packages/flutter_inappwebview/t_rex_runner/t-rex.html": "16911fcc170c8af1c5457940bd0bf055",
@@ -248,9 +253,9 @@ const RESOURCES = {
 "firebase-messaging-sw.js": "4effdad84e91d19105eb80eba983ca5b",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
-"index.html": "dc43eb69ed0034a8b7249df6945c77d0",
-"/": "dc43eb69ed0034a8b7249df6945c77d0",
-"main.dart.js": "d1c580cbc00934254d2bf247e22c7c98",
+"index.html": "0efbf0c74938f4c21b56d13d46c6f1b6",
+"/": "0efbf0c74938f4c21b56d13d46c6f1b6",
+"main.dart.js": "465e231f1a2919c83bd82912ec47ebc1",
 "manifest.json": "c4a9b4212e7c0006925abdd7cc3c0f85",
 "version.json": "5e18e19887d62341063565b772de8746"
 };
