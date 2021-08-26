@@ -1,78 +1,101 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!--
-      If you are serving your web app in a path other than the root, change the
-      href value below to reflect the base path you are serving from.
+  <!--
+    If you are serving your web app in a path other than the root, change the
+    href value below to reflect the base path you are serving from.
 
-      The path provided below has to start and end with a slash "/" in order for
-      it to work correctly.
+    The path provided below has to start and end with a slash "/" in order for
+    it to work correctly.
 
-      Fore more details:
-      * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
-    -->
-    <base href="/">
+    For more details:
+    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+  -->
+  <base href="/">
 
-    <meta charset="UTF-8">
-    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-    <meta content="Travel Union" name="description">
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="This is the website of covreg app.">
 
-    <!-- iOS meta tags & icons -->
-    <meta content="yes" name="apple-mobile-web-app-capable">
-    <meta content="black" name="apple-mobile-web-app-status-bar-style">
-    <meta content="Travel Union" name="apple-mobile-web-app-title">
-    <link href="icons/ic_launcher.png" rel="apple-touch-icon">
+  <!-- iOS meta tags & icons -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="covreg">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
-    <!-- Favicon -->
-    <link href="ic_launcher.png" rel="icon" type="image/png"/>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
 
-    <title>Travel Union</title>
-    <link href="manifest.json" rel="manifest">
+  <title>covreg</title>
+  <link rel="manifest" href="manifest.json">
 </head>
 <body>
-<!-- This script installs service_worker.js to provide PWA functionality to
-     application. For more information, see:
-     https://developers.google.com/web/fundamentals/primers/service-workers -->
-<!--<script>
-    if ('serviceWorker' in navigator) {
-        window.addEventListener('flutter-first-frame', function () {
-            navigator.serviceWorker.register('flutter_service_worker.js?v=1517333493');
-        });
+  <!-- This script installs service_worker.js to provide PWA functionality to
+       application. For more information, see:
+       https://developers.google.com/web/fundamentals/primers/service-workers -->
+  <script>
+    var serviceWorkerVersion = '2518583928';
+    var scriptLoaded = false;
+    function loadMainDartJs() {
+      if (scriptLoaded) {
+        return;
+      }
+      scriptLoaded = true;
+      var scriptTag = document.createElement('script');
+      scriptTag.src = 'main.dart.js';
+      scriptTag.type = 'application/javascript';
+      document.body.append(scriptTag);
     }
- if ('serviceWorker' in navigator) {
-    window.addEventListener('load', function () {
-     navigator.serviceWorker.register("/firebase-messaging-sw.js");
-   });
-  }
-</script>-->
 
-<script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-analytics.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-messaging.js"></script>
+    if ('serviceWorker' in navigator) {
+      // Service workers are supported. Use them.
+      window.addEventListener('load', function () {
+        // Wait for registration to finish before dropping the <script> tag.
+        // Otherwise, the browser will load the script multiple times,
+        // potentially different versions.
+        var serviceWorkerUrl = 'flutter_service_worker.js?v=' + serviceWorkerVersion;
+        navigator.serviceWorker.register(serviceWorkerUrl)
+          .then((reg) => {
+            function waitForActivation(serviceWorker) {
+              serviceWorker.addEventListener('statechange', () => {
+                if (serviceWorker.state == 'activated') {
+                  console.log('Installed new service worker.');
+                  loadMainDartJs();
+                }
+              });
+            }
+            if (!reg.active && (reg.installing || reg.waiting)) {
+              // No active web worker and we have installed or are installing
+              // one for the first time. Simply wait for it to activate.
+              waitForActivation(reg.installing ?? reg.waiting);
+            } else if (!reg.active.scriptURL.endsWith(serviceWorkerVersion)) {
+              // When the app updates the serviceWorkerVersion changes, so we
+              // need to ask the service worker to update.
+              console.log('New service worker available.');
+              reg.update();
+              waitForActivation(reg.installing);
+            } else {
+              // Existing service worker is still good.
+              console.log('Loading app from service worker.');
+              loadMainDartJs();
+            }
+          });
 
-<script>
-    const firebaseConfig = {
-    apiKey: "AIzaSyCcElK1Js8QQHVBKJUVERrCtXICzTOUR8I",
-    authDomain: "travelunion-firebase.firebaseapp.com",
-    projectId: "travelunion-firebase",
-    storageBucket: "travelunion-firebase.appspot.com",
-    messagingSenderId: "544480601060",
-    appId: "1:544480601060:web:ac3fc7377280f880745df1",
-    measurementId: "G-MNF6525R59"
-    };
-    firebase.initializeApp(firebaseConfig);
-    firebase.analytics();
-
-
-</script>
-
-<script src='//cdnt.netcoresmartech.com/smartechclient.js'></script>
-<script>smartech('create', 'ADGMOT35CHFLVDHBJNIG50K968874GTPBKMQUU7FH920M29N1D3G' , "tin");
-smartech('register', '09dc800fe85e27ef94fd5870e3db4ad5');
-smartech('identify', '');
-smartech('dispatch',1,{});
-</script>
-
-<script src="main.dart.js" type="application/javascript"></script>
+        // If service worker doesn't succeed in a reasonable amount of time,
+        // fallback to plaint <script> tag.
+        setTimeout(() => {
+          if (!scriptLoaded) {
+            console.warn(
+              'Failed to load app from service worker. Falling back to plain <script> tag.',
+            );
+            loadMainDartJs();
+          }
+        }, 4000);
+      });
+    } else {
+      // Service workers not supported. Just drop the <script> tag.
+      loadMainDartJs();
+    }
+  </script>
 </body>
 </html>
