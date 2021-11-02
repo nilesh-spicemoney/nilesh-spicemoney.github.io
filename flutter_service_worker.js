@@ -4,18 +4,18 @@ const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
   "version.json": "5e18e19887d62341063565b772de8746",
-"index.html": "09c6cb0af368bc65e3ee3f3d95c5ca55",
-"/": "09c6cb0af368bc65e3ee3f3d95c5ca55",
+"index.html": "3fa2b0b2f85d49671f3efb85a958cf60",
+"/": "3fa2b0b2f85d49671f3efb85a958cf60",
 "firebase-messaging-sw.js": "e3cb633ced387d5a461ec4350cb85275",
-"main.dart.js": "58008cf00369a82b2a64077e26615d44",
+"main.dart.js": "1d31ef5d62b529a344196085c89617ed",
 "ic_launcher.png": "b56c0391abbb75a4e7050e040abfbd0c",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
 "icons/ic_launcher.png": "38a88cd6e2a00dcf72456a689c4d9b66",
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
 "manifest.json": "d23397b905dcdcdbd47b450111a4262b",
-"assets/AssetManifest.json": "d79d514cb73028ec2ec76c3d014dbbe7",
+"assets/AssetManifest.json": "d0b148f442cae025e962959c46580047",
 "assets/NOTICES": "6cc1ca3850775be313ba0b40de781c6d",
-"assets/FontManifest.json": "409df3525166b0e80778d23ebae8cdc1",
+"assets/FontManifest.json": "aa7636abb5f497b7261ce2942b17d34b",
 "assets/packages/flutter_math_fork/lib/katex_fonts/fonts/KaTeX_AMS-Regular.ttf": "657a5353a553777e270827bd1630e467",
 "assets/packages/flutter_math_fork/lib/katex_fonts/fonts/KaTeX_Script-Regular.ttf": "55d2dcd4778875a53ff09320a85a5296",
 "assets/packages/flutter_math_fork/lib/katex_fonts/fonts/KaTeX_Size3-Regular.ttf": "e87212c26bb86c21eb028aba2ac53ec3",
@@ -281,9 +281,8 @@ const RESOURCES = {
 "assets/assets/icons/circular_cancel.png": "bde0d9dc6b16e54f6abf3ca040188e4e",
 "assets/assets/icons/from_to.png": "8d277ddafc9c542263317ecaa97b1910",
 "assets/assets/icons/bank_input.png": "67e5b3464694ab344afcbef0029aeaa8",
-"assets/assets/fonts/roboto_medium.ttf": "894a2ede85a483bf9bedefd4db45cdb9",
-"assets/assets/fonts/roboto_bold.ttf": "d329cc8b34667f114a95422aaad1b063",
-"assets/assets/fonts/roboto_regular.ttf": "230e0e1a8b7a17d5f3f03de75adea5a2"
+"assets/assets/fonts/NotoSansOriya_Bold.ttf": "0c4f79bfd3275be7190ab832f57f1bd1",
+"assets/assets/fonts/NotoSansOriya_Regular.ttf": "bad1866c466804f636485f59d0036492"
 };
 
 // The application shell files that are downloaded before a service worker can
