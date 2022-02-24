@@ -9382,8 +9382,6 @@ TODO: Add your license here.
 
 --------------------------------------------------------------------------------
 geolocator
-geolocator_android
-geolocator_apple
 geolocator_platform_interface
 geolocator_web
 
